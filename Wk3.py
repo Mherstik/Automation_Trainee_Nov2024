@@ -36,7 +36,7 @@ userNum = input(f"Pick a number between 0 & {maxNum}: ")
 while True:
     if userNum.isdigit():
         print("It's a number")
-        if userNum < 0 or userNum > maxNum:
+        if int(userNum) < 0 or int(userNum) > maxNum:
             userNum = input(f"Pick a number between 0 & {maxNum}: ")
         else:
             break
