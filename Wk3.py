@@ -47,6 +47,12 @@ while True:
         userNum = input(f"Pick a number between 0 & {maxNum}: ")
 
 
+### CONDUCT TESTS for higher/lower
+
+
+
+
+
 ###############
 ####
 ####
