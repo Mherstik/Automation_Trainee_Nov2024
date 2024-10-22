@@ -28,29 +28,36 @@ compNum = random.randint(0,maxNum)
 
 
 # Get user number
-userNum = input(f"Pick a number between 0 & {maxNum}: ")
+## below doesn't work because INPUT can only have 1 thing
 #userNum = input("Pick a number between 0 to ", maxNum)
+
 #print("Pick a number between 0 to" + str(maxNum)) 
 
 ## Check to make sure it's a number
 while True:
+    userNum = input(f"Pick a number between 0 & {maxNum}: ")
     if userNum.isdigit():
-        print("It's a number")
+        # print("It's a number")
         if int(userNum) < 0 or int(userNum) > maxNum:
-            userNum = input(f"Pick a number between 0 & {maxNum}: ")
+            print("Invalid number.")
+            continue
         else:
             break
         # print(loopCount)
         # loopCount = loopCount + 1
     else:
         print("It's not a number")
-        userNum = input(f"Pick a number between 0 & {maxNum}: ")
-
+        continue
+        
 
 ### CONDUCT TESTS for higher/lower
 
 
-
+# Options: correct, higher or lower
+# if user > computer
+#      tell lower
+# if user < computer
+#      tell higher
 
 
 
