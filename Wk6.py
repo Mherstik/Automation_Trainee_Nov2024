@@ -67,7 +67,6 @@ f.write(str(speed) + "\n")
 f.close()
 
 
-
 # f2 = open(filename, "r")
 # print(f2.readline())
 # f2.close()
