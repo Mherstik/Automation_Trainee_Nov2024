@@ -14,35 +14,66 @@ import time
 # print(f"GM Time is {time.gmtime()}")
 # print(f"C Time is {time.ctime()}")
 
-## Create a Speedtester
+def speedtester():
+    ## Create a Speedtester
+    
+    ## start a timer / get current time
+    # dl_start = dt.datetime.now(tz=None)  # changed to time.time
+    dl_start = time.time()
+    #print(dl_start)
+    
+    ### Download a file
+    
+    dl_file = "https://github.com/Mherstik/Automation_Trainee_Nov2024/raw/refs/heads/main/20MB.zip"
+    
+    ## download the file
+    # response = request.urlopen(dl_file)
+    
+    ## using a WITH to have it not stored permanently.
+    with request.urlopen(dl_file) as response:
+        response.read()
+    
+    ## stop the timer
+    dl_stop = time.time() # dt.datetime.now(tz=None)
+    #print(dl_stop)
+    
+    # Calculate time to download.
+    dl_delta = dl_stop - dl_start
+    #print(dl_delta)
+    
+    ## Convert the time to Mbps
+    # speed = filesize / downloadtime
+    speed = (20 * 8 ) / dl_delta
+    return speed
 
-## start a timer / get current time
-# dl_start = dt.datetime.now(tz=None)  # changed to time.time
-dl_start = time.time()
-print(dl_start)
+speed = speedtester()
+print(f"Your internet is running at {speed:.2f}Mbps")
 
-### Download a file
+### Store the speeds in a table or file
 
-dl_file = "https://github.com/Mherstik/Automation_Trainee_Nov2024/raw/refs/heads/main/20MB.zip"
-
-## download the file??
-with request.urlopen(dl_file) as response:
-    response.read()
+### check if file exists.
+## if file DOES NOT exist... write the headers
+## if file exists... move to adding speed to file
+## else add speed to file
 
 
-## stop the timer
-dl_stop = time.time() # dt.datetime.now(tz=None)
-print(dl_stop)
+filename = "speedtester.txt"
+f = open(filename, "a")
 
-# Calculate time to download.
-dl_delta = dl_stop - dl_start
-print(dl_delta)
+f.write("Time/Date, Speed\n")  ## make this optional
 
-## Convert the time to Mbps
-# speed = filesize / downloadtime
-speed = 
-print(f"Your internet is running at {speed}Mbps")
+f.write(f"{time.ctime()},")
+f.write(str(speed) + "\n")
+f.close()
 
-## 10MB file =  80 Mbits = factor of 8
-# 20MB = 160 Mbits
+
+
+# f2 = open(filename, "r")
+# print(f2.readline())
+# f2.close()
+
+with open(filename, "r") as f:
+    print(f.read())
+    
+
 
