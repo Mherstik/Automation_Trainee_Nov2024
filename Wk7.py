@@ -40,9 +40,6 @@ def get_Processor():
 def get_OperatingSystem():
     pass
 
-def print():
-    a = 1+1
-
 # Internet connection speed
 def speedtester():
     ## Create a Speedtester
