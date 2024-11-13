@@ -86,6 +86,32 @@ compMAC = get_MACaddress()
 ### Store the speeds in a table or file
 
 ### check if file exists.
+# filename = "Week7a.csv"
+
+# import os.path
+
+# this checks if "anything" with that name exists
+# and returns a True or False
+# if os.path.exists(filename):
+#     print("Something exists") 
+# else:
+#     print("False")
+
+# this checks if a directory exists 
+# and returns a True or False
+# if os.path.isdir("Week7"):
+#     print("Folder exists")
+# else:
+#     print("Folder is not there")
+
+# this checks if a file with that name exists
+# and returns a True or False
+# if os.path.isfile(filename):
+#     print("File exists")
+# else:
+#     print("File does not exist")
+
+
 ## if file DOES NOT exist... write the headers
 ## if file exists... move to adding speed to file
 ## else add speed to file
