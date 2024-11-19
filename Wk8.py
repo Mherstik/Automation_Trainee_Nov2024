@@ -86,7 +86,9 @@ def speedtester():
     return speed
 
 
-    # • Active ports
+# Active ports
+def get_activePorts():
+    pass
     
     
 currentTime = get_SystemTime()
